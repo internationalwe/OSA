@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <br>
+    </div>
+    
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">전체 기업 목록</h5>
+            <p class="card-text">기업들의 정보를 한눈에 볼 수 있습니다.</p>
+        </div>
+    </div>
+    
+    <div>
+        <br>
+    </div>
+    <div>
+        {% if company_list %}
+            
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                {% for company_inform in company_list %}
+                <a class="card-list" href="/company/{{ company_inform.id }}/">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><strong>{{ company_inform }}</strong></h5>
+                                <p class="card-text">
+                                    <div class="card-text">
+                                        업종 :  {{ company_inform.cmp_inderstry }} <br>
+                                        매출액 : {{ company_inform.cmp_sales }}원<br>
+                                        종업원 : {{ company_inform.cmp_workers }}명<br>
+                                        기업설명 : {{ company_inform.cmp_explanations }}<br>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>회사가 없습니다.</p>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
