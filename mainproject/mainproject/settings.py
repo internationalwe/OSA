@@ -31,8 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'common.apps.CommonConfig',
     'mainapp.apps.MainappConfig',
-    'cmpapp.apps.CmpappConfig',
+    'subapp.apps.SubappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -128,3 +129,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Login 후 이동하는 페이지
+
+LOGIN_REDIRECT_URL = '/'
+
+# Logout 후 이동하는 페이지
+
+LOGOUT_REDIRECT_URL = '/'
