@@ -1,0 +1,42 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'mystatic/css/login.css' %}">
+<div class="container">
+    <form method="post" class="post-form" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+        {% include "form_errors.html" %}
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="{% static 'images/HCD_logo.png' %}" style = "width: 200px; "/>
+            </div>
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Login!</h3>
+                        <div class="row register-form">
+                            <div class="col-md-12">
+                                <form method="post" class="post-form" action="{% url 'accounts:login' %}">
+                                <div class="form-group">
+                                    <label for="username">사용자ID</label>
+                                    <input type="text" class="form-control" name="username" id="username" value="{{ form.username.value|default_if_none:'' }}">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="password">비밀번호</label>
+                                    <input type="password" class="form-control" name="password" id="password" value="{{ form.password.value|default_if_none:'' }}">
+                                </div>
+                                    <input type="submit" class="btnRegister"  value="login"/>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+{% endblock %}

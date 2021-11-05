@@ -1,0 +1,15 @@
+<!-- 자가진단 불가능한 화면(아직 테스트를 진행하지 않았을 시) -->
+{% load static %}
+<div class="card">
+    <div class="card-body text-center mb-3">
+        <div class="test_start_area">
+            <!-- Title -->
+            <h3 class="card-title h3 my-4"><strong>자가진단을 수행할 수 있습니다!</strong></h3>
+            <!-- Text -->
+            <p class="card-text py-2">아래 버튼을 클릭하면 자가진단이 실시됩니다.</p>
+            <!-- Button -->
+            
+            <a href="{% url 'polls_list' %}"><button type="button" class="btn success">자가진단 실시</button></a>
+        </div>
+    </div>
+</div>

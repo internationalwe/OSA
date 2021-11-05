@@ -1,0 +1,37 @@
+<!-- 화면 -->
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-7 p-lg-7 mx-auto my-5">
+            <h1 class="display-4 fw-normal">건강검진의 중요성</h1>
+            <hr>
+            <p class="lead fw-normal">우리는 정기적인 건강검진을 통해 현재의 건강상태를 알 수 있으며, 이를 토대로 미래에 발생 가능한 질병들을 예측할 수 있습니다. 이러한 중요성을 인식한 사람들의 인식이 반영된 것인지, 실제로 건강보험공단의 자료에 따르면 계속해서 일반건강검진 수검률은 높아지고 있습니다.</p>
+            <span style="size: 7px; color: gray;">(10월 6일 건강보험공단 '건강검진 통계연보'에 따르면 일반건강검진 수검률은 지난 2010년 68.2%에서 2019년 74.1%으로 증가했다) </span><br><br><br>
+            <a class="btn btn-outline-secondary" style="border: 1px solid rgba(31, 187, 31, 0.644); color: rgba(31, 187, 31, 0.644);" href="http://news.heraldcorp.com/view.php?ud=20211016000012">출처링크</a>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+    <div class="container">
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+            <div class="col-md-8 p-lg-2 mx-auto my-5">
+                <h1 class="display-4 fw-normal">이 프로젝트를 시작한 이유</h1>
+                <hr>
+                <p class="lead fw-normal">기사에서 언급되었듯이 문제는 ‘검진사각지대’입니다. 해당 그래프를 참조하면 소득과 대체적으로 비례하는 건강보험료가 장기미수검자 비율과 반비례관계를 나타내는 것을 알 수 있습니다. 이는 소득에 따른 건강검진수검의 양극화를 보여줍니다. 해당 그래프는 대다수의 일반적인 시민들이 장기적으로 검진을 받지 않는 이른바 ‘검진사각지대’에 놓여있을 수도 있다는 사실을 시사합니다.
+                    팀 OSA에서는 웹페이지 HCD를 제공함으로써 이러한 검진사각지대에 위치한 사람들에게 더욱 쉽고 간편하게 미래에 발생 가능성이 높은 질병들의 정보를 제공합니다.</p>
+            </div>
+            <img src="{% static 'images/data01.png' %}" alt="">
+        </div>
+        <br><br>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+            <div class="col-md-8 p-lg-2 mx-auto my-5">
+                <h3 class="display-6 fw-normal">왜 우리 HCD를 사용해야 하는가? <br>(타당성 및 기대효과)</h3>
+                <hr>
+                <p class="lead fw-normal">HCD에서는 빅데이터를 기반으로 한 AI 학습을 통해 질병예측 기능을 탑재했습니다. 이를 통해 자신의 현 상태를 입력하면 미래에 발생이 유력한 상위 5개의 질병을 제시합니다. 해당 정보를 바탕으로 경각심을 유발해 자신의 건강상태의 취약점들을 보완할 수 있습니다.
+                    또한, 취약점들을 보완할 때 도움이 될 만한 관련 정보들을 제시하고 자신에게 맞는 건강정보를 워드클라우드 형태로 받을 수 있습니다.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
