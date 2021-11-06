@@ -1,0 +1,17 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    {% if question_list %}
+    <ul>
+        <h2>진단 리스트</h2>
+        {% for question in question_list %}
+            <li><a href="/polls/{{ question.id }}/">{{ question.question_subject }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</div>
+{% endblock %}

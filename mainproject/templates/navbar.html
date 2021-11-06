@@ -4,19 +4,18 @@
 <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="background-color: rgba(255, 255, 255, 0);">
       <a href="/main" class="d-flex align-items-center col-md-0 mb-2 mb-md-0 text-dark text-decoration-none">
-        <img src="{% static 'images/OSA_logo.png' %}" alt="로고이미지" width="100px">
+        <img src="{% static 'images/HCD_logo.png' %}" alt="로고이미지" width="100px">
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/main" class="nav-link px-2 link-secondary">홈</a></li>
-        <li><a href="/diagnosis" class="nav-link px-2 link-dark">자가진단</a></li>
+        <li><a href="/polls/polls_if" class="nav-link px-2 link-dark">자가진단</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">링크1</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">링크2</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
       </ul>
 
       <div class="col-md-0 text-end">
-        {% if user.is_authenticated %}
+      {% if user.is_authenticated %}
         <div class="dropdown text-end">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="{% static 'images/usericon.png' %}" alt="mdo" width="32" height="32" class="rounded-circle">&nbsp;{{ user.username }}
@@ -25,17 +24,13 @@
               <li><a class="dropdown-item" href="#">나의 건강상태</a></li>
               <li><a class="dropdown-item" href="#">목록1</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'common:logout' %}">로그아웃</a></li>
+              <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">로그아웃</a></li>
             </ul>
-          </div>
-        {% else %}
-        <button class="btn1" onclick='location.href="{% url 'common:login' %}"'>
-            로그인
-        </button>
-        <button class="btn2" onclick='location.href="{% url 'common:signup' %}"'>
-          회원가입
-        </button>
-        {% endif %}
+        </div>
+      {% else %}
+        <button class="btn1" onclick="location.href='{% url "accounts:login" %}'">로그인</button>
+        <button class="btn2" onclick="location.href='{% url "accounts:signup" %}'">회원가입</button>
+      {% endif %}
       </div>
     </header>
   </div>

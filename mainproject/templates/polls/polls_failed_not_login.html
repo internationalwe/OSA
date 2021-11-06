@@ -1,0 +1,34 @@
+<!-- 자가진단 불가능한 화면(로그인을 안했을 시) -->
+{% load static %}
+<!-- Card -->
+<div class="card card-cascade wider reverse">
+
+    <!-- Card image -->
+    <div class="view view-cascade overlay">
+      <img class="card-img-top" src="{% static 'images/healthcareimg.jpg' %}" 
+        alt="Card image cap">
+    </div>
+  
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+  
+      <!-- Title -->
+      <h4 class="card-title"><strong>자가진단을 하려면 회원가입을 하세요!</strong></h4>
+      <br>
+      <!-- Logo image -->
+      <img src="{% static 'images/OSA_logo.png' %}" alt="로고이미지" width="200px">
+      <br><br>
+      <!-- Text -->
+      <p class="card-text">우리 OSA는 자가진단의 정확한 데이터를 분석하기 위해 사용자들의<br>
+          건강정보를 수집하여 빅데이터를 통해 맞춤형 건강상태와 예측가능한 정보를 제공하고 있습니다.
+      </p>
+      <p>
+          가입을 진행하려면 아래 버튼을 클릭해주세요!
+      </p>
+      <button class="btn2" onclick="location.href='{% url "accounts:signup" %}'">
+        회원가입
+      </button>
+    </div>
+  
+  </div>
+  <!-- Card -->
