@@ -1,0 +1,138 @@
+.wrn-btn {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  height: calc(3rem + 2px) !important;
+  border-radius: 0;
+}
+
+.main_banner {
+  background-image: url(http://dw.nemc.or.kr/nemcMonitoring/newdesign/img/main_img1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  display: flex;
+}
+
+.main_banner_text {
+  text-align: center;
+  margin: auto;
+}
+
+.banner_text {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+.main_badge {
+  text-align: center;
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.keywords_wordcloud {
+  height: 100%;
+  width: 90%;
+  background-color: grey;
+  margin: 0 auto;
+  display: flex;
+}
+
+.view_board {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.key_word1,
+.key_word2,
+.key_word3 {
+  height: 350px;
+  width: 30%;
+  flex: 1;
+  margin: 20px 10px;
+  background-color: green;
+}
+
+.key_word1 {
+  margin-left: 20px;
+}
+
+.key_word3 {
+  margin-right: 20px;
+}
+
+.news_space,
+.content_space {
+  height: auto;
+  margin: 20px;
+}
+
+.news_space {
+  width: 70%;
+  margin-right: 10px;
+}
+
+.content_space {
+  width: 30%;
+  margin-left: 10px;
+}
+
+.news_cards1,
+.news_cards2,
+.news_cards3 {
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  margin: 10px 60px;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.466);
+}
+
+.content_list {
+  width: 100%;
+  height: auto;
+  background-color: gray;
+}
+
+.btn1,
+.btn2 {
+  background-color: #ddd;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btn1 a,
+.btn2 a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.btn1:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+
+.btn2:hover {
+  background-color: #b33e3e;
+  color: white;
+}

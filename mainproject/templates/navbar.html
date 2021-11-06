@@ -1,54 +1,39 @@
 <!-- Navigation Bar -->
 {% load static %}
 <!-- Header -->
-<div>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2377b846;"> <!-- nav의 style에서 background-color에서 색 지정-->
-            <div class="container">
-                <a class="navbar-brand" href="/main">
-                    <img src="{% static 'images/OSA_logo.png' %}" alt="로고이미지" width="100px">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/main">홈</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">링크1</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                목록
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">목록1</a></li>
-                                <li><a class="dropdown-item" href="#">목록2</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">목록3</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            {% if user.is_authenticated %}
-                            <a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }}로그아웃</a>
-                            {% else %}
-                            <a class="nav-link" href="{% url 'common:login' %}">로그인</a>
-                            {% endif %}
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="키워드 검색" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="background-color: rgba(255, 255, 255, 0);">
+      <a href="/" class="d-flex align-items-center col-md-0 mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="{% static 'images/OSA_logo.png' %}" alt="로고이미지" width="100px">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/main" class="nav-link px-2 link-secondary">홈</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">데이터 통계</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">링크1</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">링크2</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+      </ul>
+
+      <div class="col-md-0 text-end">
+        {% if user.is_authenticated %}
+        <div class="dropdown text-end">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="{% static 'images/usericon.png' %}" alt="mdo" width="32" height="32" class="rounded-circle">&nbsp;{{ user.username }}
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item" href="#">나의 건강상태</a></li>
+              <li><a class="dropdown-item" href="#">목록1</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{% url 'common:logout' %}">로그아웃</a></li>
+            </ul>
+          </div>
+        {% else %}
+        <button class="btn1"><a href="{% url 'common:login' %}">로그인</a></button>
+        <button class="btn2"><a href="{% url 'common:signup' %}">회원가입</a></button>
+        {% endif %}
+      </div>
     </header>
-</div>
+  </div>
 <!-- /Header -->
+
