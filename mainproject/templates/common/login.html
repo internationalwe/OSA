@@ -1,6 +1,7 @@
 <!-- 로그인 -->
 {% extends 'Base.html' %}
 {% block content %}
+
 <div class="container my-3">
     <div class="container my-3">
         <div class="row">
@@ -15,6 +16,7 @@
     <form method="post" class="post-form" action="{% url 'common:login' %}">
         {% csrf_token %}
         {% include 'form_errors.html' %}
+        
         <div class="form-group">
             <label for="username">사용자ID</label>
             <input type="text" class="form-control" name="username" id="username"
@@ -26,6 +28,7 @@
             value="{{ form.password.value|default_if_none:'' }}">
         </div>
         <button type="submit" class="btn btn-primary">로그인</button>
+     
     </form>
 </div>
 {% endblock %}

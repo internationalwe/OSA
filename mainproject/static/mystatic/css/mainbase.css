@@ -45,6 +45,7 @@
   width: 100%;
   display: flex;
 }
+
 .key_word1,
 .key_word2,
 .key_word3 {
@@ -79,9 +80,7 @@
   margin-left: 10px;
 }
 
-.news_cards1,
-.news_cards2,
-.news_cards3 {
+.news_cards {
   width: 100%;
   height: auto;
 }
@@ -98,7 +97,7 @@
   color: black;
 }
 
-.card:hover {
+.news_space .card:hover {
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.466);
 }
 

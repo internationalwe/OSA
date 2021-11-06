@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login
 from common.forms import UserForm
 
 # Create your views here.
+
+
 def signup(request):
     """
     계정생성 view 함수 signup
@@ -13,9 +15,10 @@ def signup(request):
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password) # 사용자인증
-            login(request, user) # 로그인
+            user = authenticate(username=username,
+                                password=raw_password)  # 사용자인증
+            login(request, user)  # 로그인
             return redirect('main')
     else:
         form = UserForm()
-    return render(request, 'common/signup.html', {'form':form})
+    return render(request, 'common/signup.html', {'form': form})

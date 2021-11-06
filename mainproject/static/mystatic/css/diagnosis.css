@@ -1,0 +1,22 @@
+.test_start_area .btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Green */
+.test_start_area .success {
+  border-color: #04aa6d;
+  color: green;
+}
+
+.test_start_area .btn:hover {
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.466);
+  background-color: #04aa6d;
+  color: white;
+}
