@@ -11,14 +11,24 @@
                    value="{{ form.username.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
-            <label for="password1">비밀번호</label>
+            <label for="password1"><strong>비밀번호</strong></label>
             <input type="password" class="form-control" name="password1" id="password1"
                    value="{{ form.password1.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
-            <label for="password2">비밀번호 확인</label>
+            <label for="password2"><strong>비밀번호 확인</strong></label>
             <input type="password" class="form-control" name="password2" id="password1"
                    value="{{ form.password2.value|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="sex"><strong>성별</strong>('남' 또는 '여'로 적으시오)</label>
+            <input type="" class="form-control" name="sex" id="sex"
+                   value="{{ form.sex.value.1|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="number"><strong>나이</strong>(숫자만 적으시오)</label>
+            <input type="text" class="form-control" name="age" id="age"
+                   value="{{ form.age.value|default_if_none:'' }}">
         </div>
         <button type="submit" class="btn btn-primary">생성하기</button>
     </form>

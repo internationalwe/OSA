@@ -14,7 +14,7 @@ def polls_list(request):
 
 def polls_vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/polls.html', {'question': question})
+    return render(request, "polls/polls.html", {'question': question})
 
 
 def polls_if(request):

@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <form action="{% url 'polls_vote' question.id %}">
+    <form method="post" action="{% url 'polls_vote' question.id %}">
         {% csrf_token %}
         <fieldset>
             <legend>
