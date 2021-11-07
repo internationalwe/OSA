@@ -17,3 +17,20 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+
+class Post(models.Model):
+    drink_count = models.IntegerField()
+    drink_amount = models.IntegerField()
+    smoke_yn = models.IntegerField()
+    smoke_amount = models.IntegerField()
+    exercise_count = models.IntegerField()
+    height = models.IntegerField()
+    weight = models.IntegerField()
+    family_stroke = models.IntegerField()
+    family_highBlood = models.IntegerField()
+    family_diabetes = models.IntegerField()
+    family_etc = models.IntegerField()
+
+    def __str__(self):
+        return self.drink_count

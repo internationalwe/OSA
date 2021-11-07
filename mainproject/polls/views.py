@@ -1,5 +1,7 @@
-from django.shortcuts import get_object_or_404, render
+from django.conf.urls import url
+from django.shortcuts import get_object_or_404, redirect, render
 from .models import Question
+from .forms import PostForm
 
 # Create your views here.
 
@@ -12,10 +14,14 @@ def polls_list(request):
     return render(request, 'polls/polls_list.html', context)
 
 
-def polls_vote(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, "polls/polls.html", {'question': question})
-
-
 def polls_if(request):
     return render(request, 'polls/polls_if.html')
+
+
+def results(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        print(request.POST)
+    else:
+        form = PostForm()
+    return render(request, 'polls/results.html', {'form': form})
