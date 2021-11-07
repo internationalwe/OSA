@@ -26,7 +26,6 @@
 .keywords_wordcloud {
   height: 100%;
   width: 90%;
-  background-color: grey;
   margin: 0 auto;
   display: flex;
 }
@@ -44,7 +43,6 @@
   width: 30%;
   flex: 1;
   margin: 20px 10px;
-  background-color: green;
 }
 
 .key_word1 {
