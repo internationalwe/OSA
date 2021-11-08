@@ -1,0 +1,90 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'mystatic/css/login.css' %}">
+<div class="container">
+    <form method="post" class="post-form" action="{% url 'accounts:signup' %}">
+        {% csrf_token %}
+        {% include "form_errors.html" %}
+    <div class="container register">
+        <div class="row"> 
+            <div class="col-md-3 register-left">
+                <img src="{% static 'images/HCD_logo.png' %}" style = "width: 200px; "/>
+            </div>
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Sign Up!</h3>
+                        
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="username">사용자ID</label>
+                                    <input type="text" class="form-control" name="username" id="username" value="{{ form.username.value|default_if_none:'' }}">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="password1">비밀번호</label>
+                                    <input type="password" class="form-control" name="password1" id="password1" value="{{ form.password1.value|default_if_none:'' }}">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="password2">비밀번호 확인</label>
+                                    <input type="password" class="form-control" name="password2" id="password2" value="{{ form.password2.value|default_if_none:'' }}">
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sex">성별</label><span style="size: 2px; color: rgb(163, 163, 163);">('남' 혹은 '여'로 적으세요)</span>
+                                    <input type="text" class="form-control" name="sex" id="sex" value="{{ form.sex.value|default_if_none:'' }}">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="age">나이</label><span style="size: 2px; color: rgb(163, 163, 163);">(숫자로만 적으세요)</span>
+                                    <input type="text" class="form-control" name="age" id="age" value="{{ form.age.value|default_if_none:'' }}">
+                                </div>
+                                    <input type="submit" class="btnRegister"  value="register"/>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+{% endblock %}
+<!--
+    <h1>계정 생성</h1>
+    <form method="post" class="post-form" action="{% url 'accounts:signup' %}">
+        {% csrf_token %}
+        {% include "form_errors.html" %}
+        <div class="form-group">
+            <label for="username">사용자ID</label>
+            <input type="text" class="form-control" name="username" id="username"
+                   value="{{ form.username.value|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="password1"><strong>비밀번호</strong></label>
+            <input type="password" class="form-control" name="password1" id="password1"
+                   value="{{ form.password1.value|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="password2"><strong>비밀번호 확인</strong></label>
+            <input type="password" class="form-control" name="password2" id="password1"
+                   value="{{ form.password2.value|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="sex"><strong>성별</strong>('남' 또는 '여'로 적으시오)</label>
+            <input type="" class="form-control" name="sex" id="sex"
+                   value="{{ form.sex.value.1|default_if_none:'' }}">
+        </div>
+        <div class="form-group">
+            <label for="number"><strong>나이</strong>(숫자만 적으시오)</label>
+            <input type="text" class="form-control" name="age" id="age"
+                   value="{{ form.age.value|default_if_none:'' }}">
+        </div>
+        <button type="submit" class="btn btn-primary">생성하기</button>
+    </form>
+-->

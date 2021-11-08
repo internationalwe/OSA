@@ -1,0 +1,15 @@
+<!-- 자가진단을 할 수 있는지 없는지 조건문 탐색 -->
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    {% if user.is_authenticated %}
+    <!-- 자가진단 불가능한 화면(아직 테스트를 진행하지 않았을 시) -->
+    {% include "polls/polls_failed_not_test.html" %}
+    {% else %}
+    <!-- 자가진단 불가능한 화면(로그인을 안했을 시) -->
+    {% include "polls/polls_failed_not_login.html" %}
+    {% endif %}
+</div>
+{% endblock %}

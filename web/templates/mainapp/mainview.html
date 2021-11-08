@@ -1,229 +1,134 @@
-{% extends 'mainbase.html' %}
+<!-- 메인 화면 -->
+{% extends 'Base.html' %}
+{% load static %}
 
-{% block content%}
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/main">
-                <img src="/static/images/OSA_logo.png" width="100px">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/main">홈</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/company">전체 기업목록</a>
-                    </li>
-                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    분류별 기업목록
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark"
-                                    aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">ESG별 기업목록</a></li>
-                                    <li><a class="dropdown-item" href="#">업종별 기업목록</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ESG란?</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="기업 검색" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-</header>
+{% block content %}
+<div class="main_banner">
 
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+</div>
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1" style="background-color:grey"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2" style="background-color:grey"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3" style="background-color:grey"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777" />
-                </svg>
-
-                <div class="container">
-                    <div class="carousel-caption text-start">
-                        <h1>Example headline.</h1>
-                        <p>Some representative placeholder content for the first slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                    </div>
-                </div>
+                <img src="{% static 'images/main_1.png' %}" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777" />
-                </svg>
-
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                    </div>
-                </div>
+                <img src="{% static 'images/main_2.png' %}" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777" />
-                </svg>
-
-                <div class="container">
-                    <div class="carousel-caption text-end">
-                        <h1>One more for good measure.</h1>
-                        <p>Some representative placeholder content for the third slide of this carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                    </div>
-                </div>
+                <img src="{% static 'images/main_3.png' %}" class="d-block w-100">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
-    <!-- Marketing messaging and featurettes
-  ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
-                        dy=".3em">140x140</text>
-                </svg>
-
-                <h2>Heading</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is
-                    the first column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
-                        dy=".3em">140x140</text>
-                </svg>
-
-                <h2>Heading</h2>
-                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the
-                    second column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
-                        dy=".3em">140x140</text>
-                </svg>
-
-                <h2>Heading</h2>
-                <p>And lastly this, the third column of representative placeholder content.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your
-                        mind.</span></h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
+    <hr>
+    <div class="main_badge">
+        <span class="badge rounded-pill bg-dark" style="font-size: 16px;">오늘의 키워드</span>
+    </div>
+    <div class="keywords_wordcloud">
+        <div class="key_word1">
+            <img src="{% static 'images/wordcloud_temp0.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+        <div class="key_word2">
+            <img src="{% static 'images/wordcloud_temp1.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+        <div class="key_word3">
+            <img src="{% static 'images/wordcloud_temp2.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+    </div>
+    <div class="view_board">
+        <div class="news_space">
+            <div class="main_badge">
+                <span class="badge rounded-pill bg-dark" style="font-size: 16px;">오늘의 뉴스</span>
             </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
-
+            <div class="news_cards">
+                <div class="card-group">
+                    <div class="card mb-3" style="width: 18rem;">
+                        <a href="https://www.ajunews.com/view/20211107153138403">
+                            <img src="https://image.ajunews.com/content/image/2021/11/07/20211107153157848588.jpg" class="card-img-top" style="height: 200px; ">
+                            <div class="card-body">
+                                <h4 class="card-title">위드코로나 후 심상찮은 증가세... 병상확보 '속도전'에 의료한계 우려</h4>
+                                <p class="card-text">신종 코로나바이러스 감염증 증가세가 심상찮는데, 7일까지 닷새 연속 신규 확진자가 2000명대를 기록..</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card mb-3" style="width: 18rem;">
+                        <a href="https://newsis.com/view/?id=NISI20211105_0018124377">
+                            <img src="https://image.newsis.com/2021/11/05/NISI20211105_0018124377_web.jpg?rnd=20211105171754" class="card-img-top" style="height: 200px; ">
+                            <div class="card-body">
+                                <h4 class="card-title">예방접종센터 운영 종료, 서로 격려하는 의료진</h4>
+                                <p class="card-text">5일 운영이 종료된 북구 코로나19 백신 예방접종 센터에서 광주 북구보건소 의료진들이 지난 4월 이후 7개월 간 함께 고생한 서로를 격려하고 있다.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-group">
+                    <div class="card mb-3" style="width: 18rem;">
+                        <a href="https://newsis.com/view/?id=NISI20211103_0000861326">
+                            <img src="https://image.newsis.com/2021/11/03/NISI20211103_0000861326_web.jpg?rnd=20211103144256" class="card-img-top" style="height: 200px; ">
+                            <div class="card-body">
+                                <h4 class="card-title">코로나19에 지친 의료진 응원하는 대전신세계</h4>
+                                <p class="card-text">3일 대전신세계 Art & Science는 '단계적 일상회복'에도 여전히 코로나19 방역을 위해 분투하고 있는 대전 유성구...</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card mb-3" style="width: 18rem;">
+                        <a href="https://www.yna.co.kr/view/AKR20211101134000051?input=1195m">
+                            <img src="https://img0.yna.co.kr/etc/inner/KR/2021/11/01/AKR20211101134000051_01_i_P4.jpg" class="card-img-top" style="height: 200px; ">
+                            <div class="card-body">
+                                <h4 class="card-title">캠코, 코로나19 대응 의료진 응원 물품 전달</h4>
+                                <p class="card-text">한국자산관리공사(캠코)는 1일 부산시청에서 장기간 코로나바이러스 감염증(코로나19) 대응 의료진 응원을 위해...</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-group">
+                    <div class="card mb-3" style="width: 18rem;">
+                        <a href="https://www.cnbnews.com/news/article.html?no=517183">
+                            <img src="https://www.cnbnews.com/data/photos/20211144/art_296148_1635999515.jpg" class="card-img-top" style="height: 200px; ">
+                            <div class="card-body">
+                                <h4 class="card-title">부산테크노파크, ‘찾아가는 유연 의료서비스’ 운영</h4>
+                                <p class="card-text">부산테크노파크와 부산시가 코로나19 사태 장기화로 발생한 의료공백을 최소화...</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card mb-3" style="width: 18rem;">
+                        <a href="https://newsis.com/view/?id=NISI20211104_0000861956">
+                            <img src="https://image.newsis.com/2021/11/04/NISI20211104_0000861956_web.jpg?rnd=20211104102031" class="card-img-top" style="height: 200px; ">
+                            <div class="card-body">
+                                <h4 class="card-title">파업, 시위하는 미 보건의료노조 직원들</h4>
+                                <p class="card-text">1199구역 소속 서비스·관리직원들이 파업하고 있다. 이들은 공정한 계약 등을 요구하며 시위하고 있다.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                        yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
-                    how this layout would work with some actual real-world content in place.</p>
+        <div class="content_space">
+            <div class="main_badge">
+                <span class="badge rounded-pill bg-dark" style="font-size: 16px;"></span>
             </div>
-            <div class="col-md-5 order-md-1">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
-
+            <div class="content_list">
+                
             </div>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
-                    really intended to be actually read, simply here to give you a better view of what this would
-                    look like with some actual content. Your content.</p>
-            </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
-
-            </div>
-        </div>
-
-        <!-- /END THE FEATURETTES -->
+    </div>
+</div>
 {% endblock %}
