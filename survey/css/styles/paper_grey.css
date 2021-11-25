@@ -1,0 +1,27 @@
+/*
+ *Form CSS
+ */
+.form-all{
+    color: #333333;
+    font-family: Courier;
+    font-size: 12px;
+    background: url(../../images/styles/style2_bg.jpg) #ffffff;
+}
+
+.form-textbox, .form-textarea, .form-upload, .form-dropdown, .form-matrix-column-headers, .form-matrix-row-headers, .form-matrix-values{
+    color: #333333;
+    font-family: Courier;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #999999;
+    background: transparent;
+}
+
+.form-submit-button, .form-submit-reset, .form-submit-print {
+    color: #333333;
+    font-family: Courier;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid #999999;
+    background: transparent;
+}
